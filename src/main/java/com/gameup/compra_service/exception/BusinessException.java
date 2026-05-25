@@ -1,0 +1,7 @@
+package com.gameup.compra_service.exception;
+
+public class BusinessException extends RuntimeException {
+    public BusinessException(String mensaje) {
+        super(mensaje);
+    }
+}
