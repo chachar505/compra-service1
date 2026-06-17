@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "juego-service", url = "${juego.service.url}")
+@FeignClient(name = "juego-service")
 public interface JuegoFeignClient {
     @GetMapping("/api/juegos/{id}")
     JuegoDTO obtenerJuegoPorId(@PathVariable("id") Long id);
