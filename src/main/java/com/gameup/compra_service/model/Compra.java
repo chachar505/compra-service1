@@ -28,7 +28,9 @@ public class Compra {
 
     @PrePersist
     protected void onCreate() {
-        this.fechaCompra = LocalDateTime.now();
+        if (this.fechaCompra == null) {
+            this.fechaCompra = LocalDateTime.now();
+        }
     }
 
 }
