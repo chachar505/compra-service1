@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: usuario-service
+          uri: lb://usuario-service
+          predicates:
+            - Path=/api/usuarios/**
+        - id: juego-service
+          uri: lb://juego-service
+          predicates:
+            - Path=/api/juegos/**
+        - id: compra-service
+          uri: lb://compra-service
+          predicates:
+            - Path=/api/compras/**
+
+server:
+  port: 8080
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true

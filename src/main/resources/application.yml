@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: compra-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_compra
+    username: root
+    password: ''
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+    out-of-order: true
+    validate-on-migrate: false
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: 8083
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+usuario:
+  service:
+    url: http://localhost:8081
+
+juego:
+  service:
+    url: http://localhost:8082
