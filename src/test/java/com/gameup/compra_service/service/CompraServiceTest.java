@@ -47,7 +47,7 @@ class CompraServiceTest {
         usuarioMock.setCuentaBloqueada(false);
 
         juegoMock = new JuegoDTO();
-        juegoMock.setId(10L);
+        juegoMock.setIdJuego(10L);
         juegoMock.setPrecio(new BigDecimal("59.99"));
         juegoMock.setActivo(true);
         juegoMock.setStock(5);
